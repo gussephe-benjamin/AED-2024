@@ -25,4 +25,4 @@ cout << x << endl;
 
 }
 
-// x = 10 y no afecta que la función square modifique esto.
+// x = 10 y no afecta que la función square modifique esto. 
