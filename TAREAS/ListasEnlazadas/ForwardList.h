@@ -1,47 +1,46 @@
+#ifndef FORWARDLIST_H
+#define FORWARDLIST_H
+
 #include<iostream>
 using namespace std;
 
-
-struct Node
-{
-    int val;
+template <typename T>
+struct Node {
+    T val;
     Node* next;
 
-    Node(int val):val(val),next(nullptr){};
-    
+    Node(T val) : val(val), next(nullptr) {}
 };
 
-class ForwardList
-{
+
+template <typename T>
+class ForwardList {
 private:
-    Node* head;
+    Node<T>* head;
 public:
     ForwardList();
     ~ForwardList();
 
-    Node* front();
+    Node<T>* front();
+    Node<T>* back();
 
-    Node* back();
-
-    void push_front(int);
-
-    void push_back(int);
+    void push_front(T);
+    void push_back(T);
 
     void pop_front();
-
     void pop_back();
 
-    int operator[](int);
+    T operator[](int);
 
     bool empty();
-
     int size();
 
     void clear();
-
     void sort();
-
     void reverse();
-
     void printList();
 };
+
+#include "ForwardList.cpp"  // Incluir las definiciones de las funciones
+
+#endif
