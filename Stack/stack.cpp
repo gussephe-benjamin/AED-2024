@@ -1,43 +1,23 @@
 #include"stack.h"
 
-struct Node{
+int main() {
+    Stack<int> intStack;
 
-    int val;
-    Node * next;
+    // Apilar elementos en la pila
+    intStack.push(10);
+    intStack.push(20);
+    intStack.push(30);
 
-    Node(int v, Node *nxt):val(v),next(nxt){}
-    Node(int val): val(val), next(nullptr) {}
-    Node(){};
-};
+    std::cout << "Pila actual: ";
+    intStack.display();
 
+    // Obtener el elemento en el tope de la pila
+    std::cout << "Tope de la pila: " << intStack.peek() << "\n";
 
+    // Remover el elemento en el tope
+    intStack.pop();
+    std::cout << "Pila después de hacer pop: ";
+    intStack.display();
 
-class stack
-{
-private:
-
-    Node * head;
-
-public:
-    stack(/* args */);
-    ~stack();
-
-    bool isEmpty();
-
-    bool isFull();
-
-    int * top();
-
-    void push();
-
-    void pop();
-
-};
-
-stack::stack(/* args */)
-{
-}
-
-stack::~stack()
-{
+    return 0;
 }
